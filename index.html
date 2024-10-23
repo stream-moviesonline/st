@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Streaming unlimited Tv shows and movies</title>
+    <style>
+        body {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("https://i.ibb.co/xDnyQQc/Stream-movies-amp-series.jpg");
+        }
+
+        /* container Styling*/
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            height: 95vh;
+            width: 95%;
+            z-index: 100;
+        }
+
+        .container h1 {
+            font-size: 3rem;
+            color: rgb(255, 255, 255);
+        }
+
+        /* Sign-up button styling */
+        button {
+            background-color: rgb(231, 36, 36);
+            font-size: 18px;
+            padding: 12px;
+            width: 170px;
+            height: 60px;
+            border: none;
+            border-radius: 30px;
+            text-transform: uppercase;
+            font-family: 'Times New Roman', Times, serif;
+            color: white;
+            transition: all 0.5s;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: rgb(231, 88, 88);
+            font-size: 20px;
+            width: 200px;
+        }
+
+        /* Style for the popup form container */
+        .popup {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: -10%;
+            width: 100%;
+            height: 110%;
+            background-color: rgba(0, 0, 0, 0.8);
+            /* Overlay effect */
+        }
+
+        /* Popup form box */
+        .popup-content {
+            /* background-color: #fff; */
+            background-color: black;
+            color: white;
+            margin: 15% auto;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+        }
+
+        .popup-content h2 {
+            text-transform: uppercase;
+        }
+
+        /* Close button style */
+        .close-btn {
+            color: rgb(230, 120, 120);
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .close-btn:hover,
+        .close-btn:focus {
+            color: rgb(231, 36, 36);
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Input field styling */
+        input[type="text"],
+        input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        /* Submit button styling */
+        /* button[type="submit"] {
+            background-color: #4CAF50;
+            background-color: rgb(179, 176, 15);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }  */
+
+        .submit {
+            /* background-color: #4CAF50; */
+            background-color: rgb(231, 36, 36);
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button a {
+            color: white;
+            text-decoration: none;
+        }
+
+        /* button[type="submit"]:hover {
+            background-color: rgb(213, 216, 46);
+        } */
+
+        .submit:hover {
+            /* background-color: #45a049; */
+            background-color: rgb(231, 88, 88);
+
+        }
+
+        a.disabled {
+            pointer-events: none;
+        }
+
+        @media (max-width: 720px) {
+            .container h1 {
+                font-size: 2rem;
+            }
+
+            .popup {
+                height: 100%;
+                top: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- <div class="cot">
+        <img src="bg.jpg" alt="background">
+    </div> -->
+    <div class="container">
+        <h1> Stream Unlimited Tv Shows and Movies For <span>FREE</span></h1>
+        <!-- Trigger button to open the popup -->
+        <button onclick="openPopup()" class="sub">Sign Up</button>
+    </div>
+
+    <!-- Popup form container -->
+    <div id="popupForm" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2>Sign Up</h2>
+            <h3>To Stream Unlimited Tv Shows And Movies</h3>
+            <form action="#" method="POST" name="theform">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" onkeyup="checkform()" placeholder="Your name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" onkeyup="checkform()" placeholder="Your email" required>
+
+                <!-- <button disabled="disabled" type=" submit" id="submit" class="submit">Sign Up</button> -->
+                <input type="submit" id="submit" class="submit" name="submit" value="SIGN UP" disabled="disabled">
+            </form>
+            <!-- <a href="https://Singingfile.com/StreamunlimitedmoviesandTv" class="link">Sign
+                Up</a> -->
+        </div>
+    </div>
+
+    <!-- JavaScript for popup functionality -->
+    <script>
+        const pro = document.querySelector(`.submit`);
+
+        function checkform() {
+            const f = document.forms[`theform`].elements;
+            const fieldMustBeFilled = true;
+
+            for (let i = 0; i < f.length; i++) {
+                if (f[i].value.length == 0)
+                    fieldMustBeFilled = false;
+            }
+
+            if (fieldMustBeFilled) {
+                pro.disabled = false;
+            } else {
+                pro.disabled = true;
+            }
+        }
+
+        pro.addEventListener(`click`, function () {
+            window.open(`https://getafilenow.com/StreamunlimitedmoviesandTv`);
+        })
+
+
+        // Open the popup
+        function openPopup() {
+            document.getElementById("popupForm").style.display = "block";
+        }
+
+        // Close the popup
+        function closePopup() {
+            document.getElementById("popupForm").style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
